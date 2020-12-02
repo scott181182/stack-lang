@@ -14,4 +14,6 @@ export class Stack<T>
 
     public size() { return this.arr.length; }
     public isEmpty() { return this.arr.length === 0; }
+
+    // public toString() { return `Stack(${this.arr.map((mem) => JSON.stringify(mem)).join(", ")})`; }
 }

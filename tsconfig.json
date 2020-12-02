@@ -1,8 +1,11 @@
 {
     "compilerOptions": {
-        "strict": true,
+        "module": "commonjs",
         "lib": [ "ES2020" ],
-        "outDir": "lib"
+        "target": "ES2019",
+        "outDir": "lib",
+
+        "strict": true,
     },
     "include": [ "src/**/*.ts" ]
 }

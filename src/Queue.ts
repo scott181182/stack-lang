@@ -15,5 +15,7 @@ export class Queue<T> implements Iterable<T>
     public size() { return this.arr.length; }
     public isEmpty() { return this.arr.length === 0; }
 
-    [Symbol.iterator](): Iterator<T, any, undefined> { return this.arr[Symbol.iterator](); }
+    [Symbol.iterator](): IterableIterator<T> { return this.arr[Symbol.iterator](); }
+
+    // public toString() { return `Queue(${this.arr.map((mem) => JSON.stringify(mem)).join(", ")})`; }
 }

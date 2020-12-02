@@ -2,6 +2,7 @@ import { readFileSync } from "fs";
 import { tokenize } from "./tokenizer";
 import { execute } from "./interpreter";
 import { StackContext } from "./context";
+import { parse } from "./parser";
 
 function fatal(msg: string) {
     console.error(msg);
@@ -17,10 +18,12 @@ function main(args: string[])
     const tokens = tokenize(source);
     console.log("Tokens: ", tokens);
 
-
+    const symbols = parse(tokens);
+    console.log("Symbols: ", symbols);
 
     const context = new StackContext();
-    // execute(tokens, context);
+    const output = execute(symbols, context);
+    console.log("Output: ", output);
     console.log("Done!");
 }
 main(process.argv.slice(2));
